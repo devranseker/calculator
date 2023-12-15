@@ -1,5 +1,5 @@
 /*
- *   Author: Haci Onur Sogut
+ *   Author: Devran ŞEKER
  *   Date: 27.04.2023
  *   Description: A simple calculator using Java Swing
  */
@@ -17,19 +17,19 @@ public class Calculator {
 
     public static void createAndShowGUI() {
 
-        //Colors I used in the calculator as variables to use easily
+       //Hesap makinesinde kolayca kullanabileceğim değişkenler olarak kullandığım renkler
         Color lavender = Color.decode("#b57edc");
         Color lightBlue = Color.decode("#1560bd");
         Color lightPink = Color.decode("#eec4c9");
         //----------------------------------------------------------
 
-        //Frame and its initial settings like size
+        //Çerçeve ve boyut gibi başlangıç ayarları
         JFrame frame = new JFrame("One Little Calculator");
         frame.setPreferredSize(new Dimension(300,300));
         frame.setResizable(false);
         //------------------------------------------
 
-        //JMenu at the top of my frame, for functionality I used my own ActionListener
+        //JMenu çerçevemin üst kısmında, işlevsellik için kendi ActionListener'ımı kullandım
         JMenuActionListener jMenuActionListener = new JMenuActionListener(frame);
 
         JMenuBar menuBar = new JMenuBar();
@@ -46,7 +46,7 @@ public class Calculator {
         JMenuItem exit = new JMenuItem("Exit");
         //----------------------------------------------------------------------------
 
-        //Ever items settings is written in a for loop to avoid repetitive commands
+        //Tekrarlanan komutlardan kaçınmak için tüm öğelerin ayarları for döngüsünde yazılır
         JMenuItem [] menuItems = {resizable,exit};
 
         for (JMenuItem menuitem:menuItems) {
@@ -65,7 +65,7 @@ public class Calculator {
         menuBar.add(settingsMenu);
         //--------------------------------------------------------------------------
 
-        //This is the place where numbers occur on the screen and its' visual settings
+        //Ekranda sayıların geçtiği yer ve görsel ayarlarıdır
         JTextField textField = new JTextField();
         textField.setPreferredSize(new Dimension(50,50));
         textField.setEditable(false);
@@ -81,11 +81,11 @@ public class Calculator {
 
         MyActionListener actionListener = new MyActionListener(textField);
 
-        //This frame and action listener is for the keyboard to type numbers
+        //Bu çerçeve ve eylem dinleyicisi klavyenin sayıları yazması içindir
         frame.addKeyListener(actionListener);
         //------------------------------------------------------------------
 
-        //Creating 4x4 panel and buttons (with gap between buttons)
+        //4x4 panel ve butonlar oluşturuluyor (butonlar arası boşluk olacak şekilde)
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4,4));
 
@@ -113,7 +113,7 @@ public class Calculator {
         }
         //------------------------------------------------------------------------------
 
-        //Adding all elements together to frame
+     //Tüm elemanları çerçeveye ekliyoruz
         frame.setJMenuBar(menuBar);
         frame.getContentPane().add(textField, BorderLayout.NORTH);
         frame.getContentPane().add(panel);
